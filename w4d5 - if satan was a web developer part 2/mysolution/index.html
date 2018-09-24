@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Is this your phone number?</p> <span>1111111111</span>
+    <button class="yes">Yes</button>
+    <button class="no">No</button>
+    <script>
+        const elem = document.querySelector("span");
+        const no = document.querySelector(".no");
+        const yes = document.querySelector(".yes");
+        elem.dataset.last = '';
+
+        function getRandom() {
+            return Math.floor(Math.random() * 8999999999 + 1000000000);
+        }
+
+        no.addEventListener("click", () => {
+            let random = getRandom();
+            while (random == elem.dataset.last) {
+                random = getRandom();
+                console.log("Numbers are the same");
+            }
+            elem.dataset.last = random;
+            elem.textContent = random;
+        })
+
+    </script>
+</body>
+
+</html>

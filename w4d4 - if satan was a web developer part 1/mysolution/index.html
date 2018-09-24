@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <button class="add">+</button>
+    <button>Submit</button>
+    <script>
+        const h1 = document.querySelector("h1");
+        const addButton = document.querySelector(".add");
+        let number = 2164099997;
+        showNumber(number);
+        addButton.addEventListener("click", () => {
+            number++;
+            showNumber(number);
+        });
+        function showNumber(num) {
+            const string = num.toString();
+            h1.textContent = `(${string.substring(0, 3)}) ${string.substring(3, 6)}-${string.substring(6, 10)}`;
+        }
+    </script>
+</body>
+
+</html>
